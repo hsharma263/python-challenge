@@ -40,7 +40,7 @@ candidates = {"Khan": khan_total_votes,
 
 winner = max(candidates, key=candidates.get)
     
-
+#Print results to terminal
 print("Election Results")
 print("--------------------")
 print("Total Votes: " + str(total_votes))
@@ -54,4 +54,19 @@ print("Winner: " + winner)
 print("--------------------")
 
 
-# Need to export analysis to another csv 
+# Export analysis to text file 
+output_path = os.path.join("analysis", "election_analysis.txt")
+with open(output_path, "w") as txtfile:
+    txtfile.writelines(["Election Results" + "\n",
+    "--------------------" + "\n",
+    "Total Votes: " + str(total_votes) + "\n", 
+    "Khan: " + str(khan_percent) + "%" + " ("+ str(khan_total_votes) + ")" + "\n",
+    "Correy: " + str(correy_percent) + "%" + " (" + str(correy_total_votes) + ")" + "\n",
+    "Li: " + str(li_percent) + "%" + " (" + str(li_total_votes)+ ")" + "\n",
+    "O'Tooley: " + str(otooley_percent) + "%" + " ("+ str(otooley_total_votes)+ ")" + "\n",
+    "--------------------" + "\n",
+    "Winner: " + winner + "\n",
+    "--------------------" + "\n"
+     ])
+txtfile.close()
+
