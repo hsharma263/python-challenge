@@ -45,34 +45,28 @@ print("Election Results")
 print("--------------------")
 print("Total Votes: " + str(total_votes))
 print("--------------------")
-#print("Khan: {:.3f}".format(khan_percent)+ "%" + " (" {khan_total_votes} + ")")
-print("Correy: " + str(correy_percent) + "%" + " (" + str(correy_total_votes) + ")")
-print("Li: " + str(li_percent) + "%" + " (" + str(li_total_votes)+ ")")
-print("O'Tooley: " + str(otooley_percent) + "%" + " ("+ str(otooley_total_votes)+ ")")
+print("Khan: {:.3f}".format(khan_percent) + "% (" + str(khan_total_votes) + ")")
+print("Correy: {:.3f}".format(correy_percent) + "% (" + str(correy_total_votes) + ")")
+print("Li: {:.3f}".format(li_percent) + "% (" + str(li_total_votes)+ ")")
+print("O'Tooley: {:.3f}".format(otooley_percent) + "% ("+ str(otooley_total_votes)+ ")")
 print("--------------------")
 print("Winner: " + winner)
 print("--------------------")
 
 
-
-print("Khan: {:.3f}".format(khan_percent) + "% (" + str(khan_total_votes) + ")")
-#print(('{:.2f}'.format(str(khan_percent))))
-
-
 # Export analysis to text file 
-# output_path = os.path.join("analysis", "election_analysis.txt")
-# with open(output_path, "w") as txtfile:
-#     txtfile.writelines(["Election Results" + "\n",
-#     "--------------------" + "\n",
-#     "Total Votes: " + str(total_votes) + "\n", 
-#     "Khan: " + '{:.2f}'.format(str(khan_percent) + "%" + " ("+ str(khan_total_votes) + ")" + "\n",
-#     "Correy: " + str(correy_percent) + "%" + " (" + str(correy_total_votes) + ")" + "\n",
-#     "Li: " + str(li_percent) + "%" + " (" + str(li_total_votes)+ ")" + "\n",
-#     "O'Tooley: " + str(otooley_percent) + "%" + " ("+ str(otooley_total_votes)+ ")" + "\n",
-#     "--------------------" + "\n",
-#     "Winner: " + winner + "\n",
-#     "--------------------" + "\n"
-#      ])
-# txtfile.close()
+output_path = os.path.join("analysis", "election_analysis.txt")
+with open(output_path, "w") as txtfile:
+    txtfile.writelines(["Election Results" + "\n",
+    "--------------------" + "\n",
+    "Total Votes: " + str(total_votes) + "\n", 
+    "Khan: {:.3f}".format(khan_percent) + "% (" + str(khan_total_votes) + ")" + "\n",
+    "Correy: {:.3f}".format(correy_percent) + "% (" + str(correy_total_votes) + ")" + "\n",
+    "Li: {:.3f}".format(li_percent) + "% (" + str(li_total_votes)+ ")" + "\n",
+    "O'Tooley: {:.3f}".format(otooley_percent) + "% ("+ str(otooley_total_votes)+ ")" + "\n",
+    "--------------------" + "\n",
+    "Winner: " + winner + "\n",
+    "--------------------" + "\n"
+     ])
+txtfile.close()
 
-#'{:.2f}'.format(number)
