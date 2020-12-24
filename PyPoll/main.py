@@ -27,9 +27,9 @@ with open(election_csv, "r") as csvfile:
 
 
 khan_percent = (khan_total_votes / total_votes) * 100
-correy_percent = round(((correy_total_votes / total_votes) * 100), 3)
-li_percent = round(((li_total_votes / total_votes) * 100), 3)
-otooley_percent = round(((otooley_total_votes / total_votes) * 100), 3)
+correy_percent = (correy_total_votes / total_votes) * 100
+li_percent = (li_total_votes / total_votes) * 100
+otooley_percent = round(otooley_total_votes / total_votes) * 100
 
 
 candidates = {"Khan": khan_total_votes, 
