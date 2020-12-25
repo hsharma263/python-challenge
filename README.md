@@ -1,2 +1,2 @@
 # python-challenge
-Will fill in later. 
+The following code in PyBank and PyPoll analyzes bank data and election data, respectively. Using Python, data is extracted from csv files, analyzed, and outputted both to the terminal and to an external textfile, found in the "analysis" directory of each respective sub-project. Raw csv files are found in the Resources folder. Assignment code is found in the main.py file of each sub-project. 
