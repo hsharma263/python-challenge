@@ -29,7 +29,7 @@ with open(election_csv, "r") as csvfile:
 khan_percent = (khan_total_votes / total_votes) * 100
 correy_percent = (correy_total_votes / total_votes) * 100
 li_percent = (li_total_votes / total_votes) * 100
-otooley_percent = round(otooley_total_votes / total_votes) * 100
+otooley_percent = (otooley_total_votes / total_votes) * 100
 
 
 candidates = {"Khan": khan_total_votes, 
@@ -57,16 +57,16 @@ print("--------------------")
 # Export analysis to text file 
 output_path = os.path.join("analysis", "election_analysis.txt")
 with open(output_path, "w") as txtfile:
-    txtfile.writelines(["Election Results" + "\n",
+    txtfile.writelines(["Election Results \n",
     "--------------------" + "\n",
     "Total Votes: " + str(total_votes) + "\n", 
-    "Khan: {:.3f}".format(khan_percent) + "% (" + str(khan_total_votes) + ")" + "\n",
-    "Correy: {:.3f}".format(correy_percent) + "% (" + str(correy_total_votes) + ")" + "\n",
-    "Li: {:.3f}".format(li_percent) + "% (" + str(li_total_votes)+ ")" + "\n",
-    "O'Tooley: {:.3f}".format(otooley_percent) + "% ("+ str(otooley_total_votes)+ ")" + "\n",
-    "--------------------" + "\n",
+    "Khan: {:.3f}".format(khan_percent) + "% (" + str(khan_total_votes) + ") \n",
+    "Correy: {:.3f}".format(correy_percent) + "% (" + str(correy_total_votes) + ") \n",
+    "Li: {:.3f}".format(li_percent) + "% (" + str(li_total_votes)+ ") \n",
+    "O'Tooley: {:.3f}".format(otooley_percent) + "% ("+ str(otooley_total_votes)+ ") \n",
+    "-------------------- \n",
     "Winner: " + winner + "\n",
-    "--------------------" + "\n"
+    "-------------------- \n"
      ])
 txtfile.close()
 
