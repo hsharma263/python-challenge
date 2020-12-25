@@ -10,6 +10,7 @@ candidates = {}
 
 election_csv = os.path.join("Resources", "election_data.csv")
 
+# Iterate through csv to count votes per candidate
 with open(election_csv, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
@@ -25,19 +26,18 @@ with open(election_csv, "r") as csvfile:
         if row[2] == "O'Tooley":
             otooley_total_votes += 1
 
-
+# Calculating the percent of vote each candidate receives
 khan_percent = (khan_total_votes / total_votes) * 100
 correy_percent = (correy_total_votes / total_votes) * 100
 li_percent = (li_total_votes / total_votes) * 100
 otooley_percent = (otooley_total_votes / total_votes) * 100
 
-
+# Creating dictionary to output the winner
 candidates = {"Khan": khan_total_votes, 
                 "Correy": correy_total_votes,
                 "Li": li_total_votes,
                 "O'Tooley": otooley_total_votes
  }
-
 winner = max(candidates, key=candidates.get)
     
 #Print results to terminal
