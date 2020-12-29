@@ -53,7 +53,6 @@ print("--------------------")
 print("Winner: " + winner)
 print("--------------------")
 
-
 # Export analysis to text file 
 output_path = os.path.join("analysis", "election_analysis.txt")
 with open(output_path, "w") as txtfile:
@@ -69,4 +68,3 @@ with open(output_path, "w") as txtfile:
     "-------------------- \n"
      ])
 txtfile.close()
-

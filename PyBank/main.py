@@ -1,15 +1,15 @@
 import os 
 import csv
+
 months = 0
 net_total = 0
 greatest_increase = 0
 greatest_decrease = 0
 net_change_list =[]
 average_change = 0
-month_of_change = []
-monthly_difference = {}
 budget_csv = os.path.join("Resources", "budget_data.csv")
 
+# Reading data from csv
 with open(budget_csv, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
@@ -18,16 +18,15 @@ with open(budget_csv, "r") as csvfile:
     months += 1
     net_total += int(first_row[1])
 
-
+    # Iterating through csv to get the number of months and net change
     for row in csvreader:
         months += 1
         net_total += int(row[1])
         net_change = int(row[1]) - prev_total
         prev_total = int(row[1])
         net_change_list += [net_change]
-        month_of_change += [row[0]]
         
-
+        # Determining the monthly greatest increase and decrease
         if net_change > greatest_increase:
             greatest_increase_month = row[0]
             greatest_increase = net_change
@@ -36,7 +35,7 @@ with open(budget_csv, "r") as csvfile:
             greatest_decrease_month = row[0]
             greatest_decrease = net_change
     
-
+# Calculating the average of the monthly changes over the period
 average_change = round(sum(net_change_list) / len(net_change_list), 2)
 
 # Print results to terminal 
